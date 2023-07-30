@@ -1,3 +1,5 @@
+Learn how to resolve the Hydration mismatch when importing client components into server components (particularly in this project, importing Modal component in root layout.tsx)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
