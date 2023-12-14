@@ -3,7 +3,7 @@
 import qs from "query-string";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Color, Size } from "@/types";
 
@@ -22,7 +22,7 @@ const Filter: React.FC<FilterProps> = ({
   const router = useRouter();
 
   const selectedValue = searchParams.get(valueKey);
-  
+
   const onClick = (id: string) => {
     const current = qs.parse(searchParams.toString());
 
@@ -43,7 +43,7 @@ const Filter: React.FC<FilterProps> = ({
     router.push(url);
   }
 
-  return ( 
+  return (
     <div className="mb-8">
       <h3 className="text-lg font-semibold">
         {name}

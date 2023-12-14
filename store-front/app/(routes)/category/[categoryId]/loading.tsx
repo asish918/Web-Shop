@@ -1,5 +1,5 @@
 import Container from "@/components/ui/container";
-import Skeleton from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Loading = () => {
   return (
@@ -25,5 +25,5 @@ const Loading = () => {
     </Container>
   );
 }
- 
+
 export default Loading;
