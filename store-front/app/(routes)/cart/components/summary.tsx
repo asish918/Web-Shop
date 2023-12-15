@@ -16,7 +16,7 @@ const Summary = () => {
 
   useEffect(() => {
     if (searchParams.get('success')) {
-      toast.success('Payment completed.');
+      toast.success('Payment completed. \nYour items will never be delivered though 😉', { duration: 4000 });
       removeAll();
     }
 
@@ -30,11 +30,19 @@ const Summary = () => {
   }, 0);
 
   const onCheckout = async () => {
-    const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
-      productIds: items.map((item) => item.id)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+      method: "post",
+      body: JSON.stringify({
+        productIds: items.map((item) => item.id)
+      })
     });
 
-    window.location = response.data.url;
+    // const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+    //   productIds: items.map((item) => item.id)
+    // });
+
+    const data = await response.json();
+    window.location = data.url;
   }
 
   return (
